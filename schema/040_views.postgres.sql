@@ -1,4 +1,20 @@
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
+-- engine: postgres
+-- table:  peer_nodes
+-- Contract view for [peer_nodes]
+CREATE OR REPLACE VIEW vw_peer_nodes AS
+SELECT
+  id,
+  name,
+  "type",
+  location,
+  status,
+  last_seen,
+  meta,
+  created_at
+FROM peer_nodes;
+
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  peer_nodes_health
 -- Peer health with last lag samples
@@ -22,20 +38,4 @@ FROM peer_nodes p
 LEFT JOIN last_lag l ON l.peer_id = p.id
 GROUP BY p.id, p.name, p.type, p.location, p.status, p.last_seen
 ORDER BY p.status, p.name;
-
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
--- engine: postgres
--- table:  peer_nodes
--- Contract view for [peer_nodes]
-CREATE OR REPLACE VIEW vw_peer_nodes AS
-SELECT
-  id,
-  name,
-  "type",
-  location,
-  status,
-  last_seen,
-  meta,
-  created_at
-FROM peer_nodes;
 
