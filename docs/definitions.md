@@ -5,14 +5,14 @@ Known database/application peers for replication and sync.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Registration timestamp (UTC). |
+| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Registration timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| last_seen | TIMESTAMPTZ(6) | YES |  | Last heartbeat timestamp. |
+| last_seen | DATETIME(6) | YES |  | Last heartbeat timestamp. |
 | location | VARCHAR(120) | YES |  | Optional region / data center. |
-| meta | JSONB | YES |  | JSON metadata describing the peer. |
+| meta | JSON | YES |  | JSON metadata describing the peer. |
 | name | VARCHAR(120) | NO |  | Peer display name. |
-| status | TEXT | NO | active | Health status. (enum: active, offline, degraded, disabled) |
-| type | TEXT | NO |  | Peer type. (enum: postgres, mysql, app, service) |
+| status | ENUM('active','offline','degraded','disabled') | NO | active | Health status. (enum: active, offline, degraded, disabled) |
+| type | ENUM('postgres','mysql','app','service') | NO |  | Peer type. (enum: postgres, mysql, app, service) |
 
 ## Engine Details
 
@@ -49,5 +49,5 @@ Indexes:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_peer_nodes | mysql | algorithm=MERGE, security=INVOKER | [packages\peer-nodes\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/peer-nodes/schema/040_views.mysql.sql) |
-| vw_peer_nodes | postgres |  | [packages\peer-nodes\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/peer-nodes/schema/040_views.postgres.sql) |
+| vw_peer_nodes | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_peer_nodes | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
