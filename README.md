@@ -100,9 +100,9 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `created_at` – default=CURRENT_TIMESTAMP(6)
-- `status` – default=active, enum
 - `type` – enum
+- `status` – default=active, enum
+- `created_at` – default=CURRENT_TIMESTAMP(6)
 
 ## Schema Files
 | File | Engine |
