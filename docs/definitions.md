@@ -7,12 +7,12 @@ Known database/application peers for replication and sync.
 | --- | --- | --- | --- | --- |
 | created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Registration timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| type | mysql: ENUM('postgres','mysql','app','service') / postgres: TEXT | NO |  | Peer type. (enum: postgres, mysql, app, service) |
 | last_seen | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last heartbeat timestamp. |
 | location | VARCHAR(120) | YES |  | Optional region / data center. |
-| status | mysql: ENUM('active','offline','degraded','disabled') / postgres: TEXT | NO | active | Health status. (enum: active, offline, degraded, disabled) |
 | meta | mysql: JSON / postgres: JSONB | YES |  | JSON metadata describing the peer. |
 | name | VARCHAR(120) | NO |  | Peer display name. |
+| status | mysql: ENUM('active','offline','degraded','disabled') / postgres: TEXT | NO | active | Health status. (enum: active, offline, degraded, disabled) |
+| type | mysql: ENUM('postgres','mysql','app','service') / postgres: TEXT | NO |  | Peer type. (enum: postgres, mysql, app, service) |
 
 ## Engine Details
 
