@@ -1,0 +1,32 @@
+{
+  "tables": {
+    "peer_nodes": {
+      "columns": {
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "last_seen": {
+          "strategy": "passthrough"
+        },
+        "location": {
+          "strategy": "passthrough"
+        },
+        "meta": {
+          "strategy": "passthrough"
+        },
+        "name": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        },
+        "type": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
